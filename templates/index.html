@@ -1,38 +1,79 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Salary prediction</title>
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="Login , registration, forgot password "./>
-		<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<div class="login-02">
-		<div class="two-login  hvr-float-shadow">
-			<div class="two-login-head">
-					<img src="images/top-note.png" alt=""/>
-					<h2>Salary Expectation</h2>
-					<lable></lable>
-			</div>
-			<form action="{{ url_for('predict')}}"method="post">
-				<li>
-					<input type="text" name="experience" placeholder="experience" required="required" class="text" ><a href="#" class=" icon2 num"></a>
-				</li>
-				<li>
-					<input  type="text" name="test_score" placeholder="Test Score" required="required" class="text"/>
-				</li>
-				<li>
-					<input type="text" name="interview_score" placeholder="Interview Score" required="required" class="text" />
-				</li>
-				</div>
-				<div class="submit two">
-						<input type="submit"  value="PREDICT" >
-				</div>
-			</form>
-		</div>
-		<br>
-		<br>
-		{{ prediction_text }}
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <title>Salary Prediction</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h2 class="text-center">Salary Expectation Prediction</h2>
+    <div class="container">
+      <div class="row" style="margin-top: 40px">
+        <div class="col-sm-6">
+          <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+              <label for="experience">Experience: </label>
+              <input
+                type="text"
+                name="experience"
+                class="form-control"
+                placeholder="Experience"
+              />
+            </div>
+            <div class="form-group">
+              <label for="text_score">Text score: </label>
+              <input
+                type="text"
+                name="text_score"
+                class="form-control"
+                placeholder="Text score"
+              />
+            </div>
+            <div class="form-group">
+              <label for="interview_score">interview score : </label>
+              <input
+                type="text"
+                name="interview_score"
+                class="form-control"
+                placeholder="Interview score"
+              />
+            </div>
+            <button type="submit" class="btn form-control btn-default">
+              Predict
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    {{ prediction_text }}
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
